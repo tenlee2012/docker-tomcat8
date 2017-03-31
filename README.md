@@ -1,7 +1,10 @@
 本镜像源自于DockerHub镜像[tutum/Tomcat](https://github.com/ClouDesire/docker-tomcat)。
+
 ### 版本
 当前版本 tomcat 8.0.39, java8
-###说明
+
+### 说明
+
 容器启动后会自动创建一个具有所有权限的admin用户，并自动生成随机密码。你可以通过查看容器log获得密码，比如
 ```
 => Creating and admin user with a random password in Tomcat
