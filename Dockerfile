@@ -1,5 +1,5 @@
 FROM cloudesire/java:8
-MAINTAINER ClouDesire <dev@cloudesire.com>
+MAINTAINER Tenlee <tenlee2012@gmail.com>
 
 RUN apt-get update && \
     apt-get install -yq --no-install-recommends wget pwgen ca-certificates && \
