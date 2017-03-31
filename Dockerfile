@@ -24,6 +24,7 @@ RUN wget -q https://archive.apache.org/dist/tomcat/tomcat-${TOMCAT_MAJOR_VERSION
     sed -i "s/Connector port=\"8080\"/Connector port=\"8080\" bindOnInit=\"${TOMCAT_BIND_ON_INIT}\"/" tomcat/conf/server.xml
 
 ADD create_tomcat_admin_user.sh /create_tomcat_admin_user.sh
+ADD change_tomcat_upload_limit.sh /change_tomcat_upload_limit.sh
 ADD run.sh /run.sh
 RUN chmod +x /*.sh
 

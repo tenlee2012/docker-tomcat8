@@ -1,8 +1,4 @@
 MAX_SIZE=${MAX_SIZE:-104857600}
 
-echo "=> Creating and admin user with a ${_word} password in Tomcat"
-sed -i -r 's/<\/tomcat-users>//' tomcat-users.xml
-echo '<role rolename="manager-gui"/>' >> tomcat-users.xml
-echo "<user username=\"admin\" password=\"${PASS}\" roles=\"manager-gui\"/>" >> tomcat-users.xml
-echo '</tomcat-users>' >> tomcat-users.xml 
+sed -i "s/<max-file-size>.*<\/max-file-size>/<max-file-size>${MAX_SIZE}<\/max-file-size>/;s/<max-request-size>.*<\/max-request-size>/<max-request-size>${MAX_SIZE}<\/max-request-size>/" ${CATALINA_HOME}/webapps/manager/WEB-INF/web.xml
 echo "=> Done!"
